@@ -1,0 +1,37 @@
+
+project_type: rtt4   # 可选值: make, cmake, idf, rtt4 ,rtt
+
+download:
+
+  builtin: 
+    art_pi: false      #true false
+
+  openocd:
+
+    # stm32f1: >-
+    #   openocd -f interface/cmsis-dap.cfg -f target/stm32f1x.cfg
+    #   -c init
+    #   -c 'reset halt'
+    #   -c 'flash write_image erase rtthread.bin 0x08000000'
+    #   -c reset
+    #   -c shutdown
+    # stm32f4: >-
+    #   openocd -f interface/cmsis-dap.cfg -f target/stm32f4x.cfg
+    #   -c init
+    #   -c 'reset halt'
+    #   -c 'flash write_image erase rtthread.bin 0x08000000'
+    #   -c reset
+    #   -c shutdown
+    # stm32h7: >-
+    #   openocd -f interface/stlink.cfg -f target/stm32h7x.cfg
+    #   -c init
+    #   -c 'reset halt'"
+    #   -c 'flash write_image erase build/H750XBH6.bin 0x08000000'
+    #   -c reset"
+    #   -c shutdown
+  stlink:
+    stm32h7: >-
+      STM32_Programmer_CLI
+      -c port=SWD mode=NORMAL
+      -d /home/sean/studio/c_cpp_workspace/Library_armgcc/artpi-1.3.0/bootloader/demo_onchip.bin 0x08000000
+      -hardRst -s
