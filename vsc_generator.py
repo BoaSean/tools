@@ -19,6 +19,7 @@ toolchain={
         "tool_path":"D:/studio/workspace/c_cpp_workspace2/tools",
 
         "rtt_env":"D:/Program/env-windows-1.5.2/tools/bin/env-init.bat",
+        "PKGS_ROOT":"D:/studio/workspace/c_cpp_workspace2/ThirdParty/source/rtt-packages",
         "RTT_ROOT4":"D:/studio/workspace/c_cpp_workspace2/ThirdParty/source/rtt-kernel-v4.1.0",
         "SDK_ROOT4":"D:/studio/workspace/c_cpp_workspace2/ThirdParty/source/rtt-sdk-v4.1.0/stm32",
         "RTT_ROOT":"D:/studio/workspace/c_cpp_workspace2/ThirdParty/source/rtt-kernel",
@@ -32,18 +33,19 @@ toolchain={
         "python":"python3",
         "STM32_Programmer_CLI":"/home/sean/program/stm32cubeprg/bin/STM32_Programmer_CLI",
 
-        "workspace_path":"/home/sean/studio/c_cpp_workspace2",
-        "ThirdParty_path":"/home/sean/studio/c_cpp_workspace2/ThirdParty",
-        "tool_path":"/home/sean/studio/c_cpp_workspace2/tools",
+        "workspace_path":"/home/sean/studio/c_cpp_workspace",
+        "ThirdParty_path":"/home/sean/studio/c_cpp_workspace/ThirdParty",
+        "tool_path":"/home/sean/studio/c_cpp_workspace/tools",
 
         "rtt_env":"~/.env/env.sh",
-        "RTT_ROOT4":"/home/sean/studio/c_cpp_workspace2/ThirdParty/source/rtt-kernel-v4.1.0",
-        "SDK_ROOT4":"/home/sean/studio/c_cpp_workspace2/ThirdParty/source/rtt-sdk-v4.1.0/stm32",
-        "RTT_ROOT":"/home/sean/studio/c_cpp_workspace2/ThirdParty/source/rtt-kernel",
-        "SDK_ROOT":"/home/sean/studio/c_cpp_workspace2/ThirdParty/source/rtt-sdk/stm32",
-
+        "PKGS_ROOT":"/home/sean/studio/c_cpp_workspace/ThirdParty/source/rtt-packages",
+        "RTT_ROOT4":"/home/sean/studio/c_cpp_workspace/ThirdParty/source/rtt-kernel-v4.1.0",
+        "SDK_ROOT4":"/home/sean/studio/c_cpp_workspace/ThirdParty/source/rtt-sdk-v4.1.0/stm32",
+        "RTT_ROOT":"/home/sean/studio/c_cpp_workspace/ThirdParty/source/rtt-kernel",
+        "SDK_ROOT":"/home/sean/studio/c_cpp_workspace/ThirdParty/source/rtt-sdk/stm32",
+        
         # "idf":"~/esp/esp-idf/export.sh",
-        "idf":"/home/sean/.espressif/tools/activate_idf_v5.5.4.sh",
+        "idf":"/home/sean/.espressif/tools/activate_idf_v5.5.5.sh",
     }
 }
 
@@ -535,6 +537,7 @@ def generate_settings_json(build_system,vscode_dir,build_type):
                             "-i"
                         ],
                         "env": {
+                            "PKGS_ROOT":toolchain["linux"]["PKGS_ROOT"],
                             "RTT_ROOT": toolchain["linux"]["RTT_ROOT4"],
                             "SDK_ROOT": toolchain["linux"]["SDK_ROOT4"],
                         }
@@ -553,6 +556,7 @@ def generate_settings_json(build_system,vscode_dir,build_type):
                             toolchain["windows"]["rtt_env"]
                         ],
                         "env": {
+                            "PKGS_ROOT":toolchain["windows"]["PKGS_ROOT"],
                             "RTT_ROOT": toolchain["windows"]["RTT_ROOT4"],
                             "SDK_ROOT": toolchain["windows"]["SDK_ROOT4"]
                         }
@@ -573,6 +577,7 @@ def generate_settings_json(build_system,vscode_dir,build_type):
                             "-i"
                         ],
                         "env": {
+                            "PKGS_ROOT":toolchain["linux"]["PKGS_ROOT"],
                             "RTT_ROOT": toolchain["linux"]["RTT_ROOT"],
                             "SDK_ROOT": toolchain["linux"]["SDK_ROOT"],
                         }
@@ -591,6 +596,7 @@ def generate_settings_json(build_system,vscode_dir,build_type):
                             toolchain["windows"]["rtt_env"]
                         ],
                         "env": {
+                            "PKGS_ROOT":toolchain["windows"]["PKGS_ROOT"],
                             "RTT_ROOT": toolchain["windows"]["RTT_ROOT"],
                             "SDK_ROOT": toolchain["windows"]["SDK_ROOT"]
                         }
